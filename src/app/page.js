@@ -14,7 +14,7 @@ export default function Home() {
   const scrollRef = useRef(null);
 
   return (
-    <div className="min-h-screen overflow-scroll snap-y snap-mandatory bg-transparent">
+    <div className="h-screen overflow-scroll snap-y snap-mandatory bg-transparent">
       <LandingPage />
       <Section1 />
       <Section2 />

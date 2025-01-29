@@ -33,8 +33,7 @@ const FadingDiv = ({ section, text }) => {
   }, []);
 
   const scrollToSection = () => {
-    window.scrollTo({
-      top: window.innerHeight * (section + 1),
+    document.getElementById(`section${section + 1}`).scrollIntoView({
       behavior: "smooth",
     });
   };

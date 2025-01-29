@@ -4,7 +4,7 @@ import HeadingText from "@/components/visual/heading-text";
 
 const Section1 = () => {
   return (
-    <section className="section bg-gradient-to-b from-myBlue to-mylightBlue text-white snap-start">
+    <section id="section1" className="section bg-gradient-to-b from-myBlue to-mylightBlue text-white snap-start">
     <HeadingText text={"How old are you?"} />
       <div className="w-[80vw] h-[60vh">
         <AgeInput />
