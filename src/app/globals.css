@@ -17,5 +17,11 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter Tight", sans-serif;
+}
+
+@layer components {
+  .section {
+    @apply h-screen relative flex flex-col items-center text-center;
+  }
 }
