@@ -1,6 +1,7 @@
 import FadingDiv from "@/components/visual/components/nav-arrow-down";
 import HeadingText from "@/components/visual/components/heading-text";
 import NavArrowUp from "@/components/visual/components/nav-arrow-up";
+import PriceSelection from "@/components/visual/price-selection";
 
 const Section6 = () => {
   return (
@@ -9,8 +10,9 @@ const Section6 = () => {
       className="section bg-gradient-to-b from-myYellow to-myPink text-white snap-start"
     >
       <NavArrowUp section={6} />
-      <FadingDiv section={6} />
       <HeadingText text={"What is your price range?"} />
+      <PriceSelection />
+      <FadingDiv section={6} />
     </section>
   );
 };
