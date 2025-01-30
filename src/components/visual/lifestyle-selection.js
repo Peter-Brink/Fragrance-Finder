@@ -7,7 +7,7 @@ import ProteinEmoji from "../../../public/emojis/protein.svg";
 import VegetarianEmoji from "../../../public/emojis/vegetarian.svg";
 import NoneEmoji from "../../../public/emojis/none.svg";
 
-const LifestyleSelection = ({ sectionId }) => {
+const LifestyleSelection = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const options = [
