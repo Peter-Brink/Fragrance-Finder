@@ -1,8 +1,11 @@
-import FadingDiv from "@/components/visual/fading-div";
+import FadingDiv from "@/components/visual/components/nav-arrow-down";
 
 const LandingPage = () => {
   return (
-    <section className="section justify-center snap-start bg-gradient-to-b from-myNavy via-myNavy to-myBlue">
+    <section
+      id="section0"
+      className="section justify-center snap-start bg-gradient-to-b from-myNavy via-myNavy to-myBlue"
+    >
       <div className="flex flex-col items-center mb-10">
         <h1 className="text-2xl xs:text-4xl sm:text-5xl md:text-6xl font-sans font-light text-white mb-5">
           Your fragrance helps you
