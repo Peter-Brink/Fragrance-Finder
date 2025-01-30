@@ -19,6 +19,7 @@ export default {
         myYellow: "#FFD400",
         myPink: "#FD00A4",
         myBlue2: "#4800FD",
+        myGrey: "#FBFBFB",
         myTextBlue: "#0095DA",
         myTextPink: "#EA00E2",
       },

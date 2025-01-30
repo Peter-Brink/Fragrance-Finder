@@ -1,7 +1,7 @@
 const SelectionBlock = ({ label, children, isSelected, onSelect }) => {
   return (
     <div
-      className={`selection-block bg-white flex flex-col cursor-pointer ${
+      className={`selection-block flex flex-col cursor-pointer ${
         isSelected ? "outline outline-2 sm:outline-4 outline-myNavy" : "outline-none"
       } ${
           label == "Choose for me" ? "items-center" : "items-start"}`}

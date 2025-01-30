@@ -7,7 +7,7 @@ const Section2 = () => {
   return (
     <section
       id="section2"
-      className="section bg-gradient-to-b from-mylightBlue to-myPurple text-white snap-start"
+      className="section bg-gradient-to-b from-mylightBlue to-myPurple snap-start"
     >
       <NavArrowUp section={2} />
       <HeadingText text={"What is your gender?"} />
