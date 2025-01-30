@@ -1,7 +1,7 @@
 import FadingDiv from "@/components/visual/components/nav-arrow-down";
 import HeadingText from "@/components/visual/components/heading-text";
 import NavArrowUp from "@/components/visual/components/nav-arrow-up";
-import FlavourSelection from "@/components/visual/flavour-selection";
+import FlavourSelection from "@/components/visual/scent-selection";
 
 const Section4 = () => {
   return (
