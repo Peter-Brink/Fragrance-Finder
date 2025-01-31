@@ -8,9 +8,11 @@ const ExtraInfoSection = ({ navigateToResults }) => {
 
   const handleApiCall = async () => {
     setLoading(true);
-    await makeApiCall();
+    const result = await makeApiCall();
     setLoading(false);
-    navigateToResults();
+    if (result === 200) {
+      navigateToResults();
+    }
   };
 
   const handleInputChange = (e) => {

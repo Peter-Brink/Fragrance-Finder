@@ -30,7 +30,11 @@ export const makeApiCall = async () => {
     ", "
   )}. They are willing to spend between ${priceRange[0]} and ${
     priceRange[1]
-  } dollars. They also had the following additional notes: ${extraDetails}`;
+  } dollars.${
+    extraDetails === ""
+      ? ""
+      : " They also had the following additional notes:" + extraDetails
+  }`;
 
   try {
     const res = await fetch("/api/llm-connector", {
@@ -42,9 +46,14 @@ export const makeApiCall = async () => {
         message: llmInput,
       }),
     });
+    if(res.status !== 200) {
+      throw new Error("API call failed: " + res.statusText);
+    }
     const data = await res.json();
     localStorage.setItem("resultsData", JSON.stringify(data));
+    return res.status;
   } catch (error) {
     console.error("Error during API call:", error);
+    return error;
   }
 };
