@@ -7,11 +7,11 @@ const Section1 = () => {
   return (
     <section
       id="section1"
-      className="section bg-gradient-to-b from-myBlue to-mylightBlue"
+      className="section items-center bg-gradient-to-b from-myBlue to-mylightBlue"
     >
       <NavArrowUp section={1} />
-      <HeadingText text={"How old are you?"} />
-      <div className="w-[80vw] flex flex-grow mb-20 justify-center">
+      <div>
+        <HeadingText text={"How old are you?"}/>
         <AgeInput />
       </div>
       <FadingDiv section={1} />

@@ -10,8 +10,10 @@ const Section5 = () => {
       className="section bg-gradient-to-b from-myOrange to-myYellow"
     >
       <NavArrowUp section={5} />
-      <HeadingText text={"What occasion is your fragrance for?"} />
-      <OccasionSelection />
+      <div>
+        <HeadingText text={"What occasion is your fragrance for?"} />
+        <OccasionSelection />
+      </div>
       <FadingDiv section={5} />
     </section>
   );

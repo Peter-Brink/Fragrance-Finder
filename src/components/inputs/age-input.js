@@ -15,7 +15,7 @@ const AgeInput = () => {
       value={age}
       onChange={(e) => setSectionData("age", e.target.value)}
       onInput={(e) => e.target.value = e.target.value.replace(/\D/g, '')}
-      className="w-[100%] text-[200px] sm:text-[350px] lg:text-[400px] mb-20 bg-transparent text-center focus:outline-none focus:ring-0"
+      className="w-[100%] h-[200px] sm:h-[300px] md:h-[400px] text-[200px] sm:text-[300px] md:text-[400px] bg-transparent text-center focus:outline-none focus:ring-0"
     />
   );
 };

@@ -9,8 +9,8 @@ const PriceSelection = () => {
 
 
   return (
-    <div className="flex flex-col w-[100%] items-center justify-center h-screen p-8">
-      <div className="relative w-[70vw] max-w-[1200px]">
+    <div className="flex flex-col w-[100%] mt-[100px] items-center justify-center p-8">
+      <div className="w-[70vw] max-w-[1200px]">
         {/* Slider */}
         <Range
           step={10}
@@ -50,7 +50,7 @@ const PriceSelection = () => {
       </div>
 
       {/* Display Price Range */}
-      <div className="mt-28 text-[50px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[160px] font-medium">
+      <div className="mt-16 text-[50px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[160px] font-medium">
         ${priceRange[0]} - ${priceRange[1] == 1000 ? "1000+" : priceRange[1]}
       </div>
     </div>
