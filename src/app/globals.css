@@ -22,7 +22,7 @@ body {
 
 @layer components {
   .section {
-    @apply h-screen relative flex flex-col items-center text-center;
+    @apply h-screen relative flex flex-col items-center text-center text-white snap-start;
   }
   .gender-block {
     @apply w-[130px] h-[130px] xs:w-[200px] xs:h-[200px] sm:w-[250px] sm:h-[250px] md:w-[330px] md:h-[330px] lg:w-[400px] lg:h-[400px] bg-myGrey rounded-[20px] xs:rounded-[50px] flex items-center justify-center transform duration-100 hover:scale-95;

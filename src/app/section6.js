@@ -7,7 +7,7 @@ const Section6 = () => {
   return (
     <section
       id="section6"
-      className="section bg-gradient-to-b from-myYellow to-myPink text-white snap-start"
+      className="section bg-gradient-to-b from-myYellow to-myPink"
     >
       <NavArrowUp section={6} />
       <HeadingText text={"What is your price range?"} />

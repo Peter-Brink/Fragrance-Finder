@@ -7,10 +7,10 @@ const Section4 = () => {
   return (
     <section
       id="section4"
-      className="section bg-gradient-to-b from-myRed to-myOrange text-white snap-start"
+      className="section bg-gradient-to-b from-myRed to-myOrange"
     >
       <NavArrowUp section={4} />
-      <HeadingText text={"Which flavour profiles are you looking for?"} />
+      <HeadingText text={"Which scent profiles are you looking for?"} />
       <FlavourSelection/>
       <FadingDiv section={4} />
     </section>
