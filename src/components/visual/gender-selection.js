@@ -1,19 +1,19 @@
 import ManEmoji from "../../../public/emojis/man-raising-hand.svg";
 import WomanEmoji from "../../../public/emojis/woman.svg";
-import { useState } from "react";
+import useUserInputStore from "@/store/useUserInputStore";
 
 const GenderSelection = () => {
-  const [selectedGender, setSelectedGender] = useState("");
+  const { section2, setSectionData } = useUserInputStore();
 
   const handleSelection = (gender) => {
-    setSelectedGender(gender);
+    setSectionData("section2", gender);
   };
 
   return (
     <div className="flex items-center justify-center gap-5 xs:gap-10 lg:gap-20 w-[100%] h-[60vh]">
       <div
         className={`gender-block ${
-          selectedGender == "male"
+          section2 == "male"
             ? "outline outline-4 outline-myNavy"
             : "outline-none"
         }`}
@@ -23,7 +23,7 @@ const GenderSelection = () => {
       </div>
       <div
         className={`gender-block ${
-          selectedGender == "female"
+          section2 == "female"
             ? "outline outline-4 outline-myNavy"
             : "outline-none"
         }`}

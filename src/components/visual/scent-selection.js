@@ -6,9 +6,12 @@ import FloralEmoji from "../../../public/emojis/floral.svg";
 import SpicyEmoji from "../../../public/emojis/spicy.svg";
 import FreshEmoji from "../../../public/emojis/fresh.svg";
 import ChooseEmoji from "../../../public/emojis/choose.svg";
+import useUserInputStore from "@/store/useUserInputStore";
+
 
 const FlavourSelection = () => {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const { scentSelections, handleArraySelection } = useUserInputStore();
+
 
   const options = [
     { label: "Woody", icon: <WoodyEmoji className="w-[50%] h-auto" /> },
@@ -25,20 +28,6 @@ const FlavourSelection = () => {
     { label: "Choose for me", icon: <ChooseEmoji className="w-[50%] h-auto" /> },
   ];
 
-  const handleSelect = (label) => {
-    if (label === "Choose for me") {
-      setSelectedOptions(["Choos for me"]);
-      return;
-    } else {
-      setSelectedOptions(selectedOptions.filter((item) => item !== "Choose for me"));
-      setSelectedOptions((prev) =>
-        prev.includes(label)
-          ? prev.filter((item) => item !== label)
-          : [...prev, label]
-      );
-    }
-  };
-
   return (
     <div className="flex flex-col items-center w-[100vw] mt-6">
       <div className="grid grid-cols-2  sm:grid-cols-3 gap-2 sm:gap-5 md:gap-10 lg:gap-x-20">
@@ -46,8 +35,8 @@ const FlavourSelection = () => {
           <SelectionBlock
             key={label}
             label={label}
-            isSelected={selectedOptions.includes(label)}
-            onSelect={() => handleSelect(label)}
+            isSelected={scentSelections.includes(label)}
+            onSelect={() => handleArraySelection("scentSelections", label)}
           >
             {icon}
           </SelectionBlock>

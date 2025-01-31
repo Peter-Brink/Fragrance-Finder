@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { Range } from "react-range";
 import MoneyEmoji from "../../../public/emojis/money.svg";
+import useUserInputStore from "@/store/useUserInputStore";
 
 const PriceSelection = () => {
-  const [values, setValues] = useState([400, 700]); // Initial range
+  const { priceRange, setSectionData } = useUserInputStore();
+
 
   return (
     <div className="flex flex-col w-[100%] items-center justify-center h-screen p-8">
@@ -15,8 +16,8 @@ const PriceSelection = () => {
           step={10}
           min={0}
           max={1000}
-          values={values}
-          onChange={(newValues) => setValues(newValues)}
+          values={priceRange}
+          onChange={(newValues) => setSectionData("priceRange", newValues)}
           renderTrack={({ props, children }) => (
             <div {...props} className="h-1 bg-white rounded-full relative">
               {children}
@@ -37,7 +38,7 @@ const PriceSelection = () => {
                   className="w-[50%] h-auto mb-[150px] transition-transform"
                   style={{
                     transform: `scale(${
-                      Math.round(values[index] / 30) / 10 + 1
+                      Math.round(priceRange[index] / 30) / 10 + 1
                     })`,
                   }}
                 />
@@ -49,8 +50,8 @@ const PriceSelection = () => {
       </div>
 
       {/* Display Price Range */}
-      <div className="mt-28 text-white text-[50px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[160px] font-medium">
-        ${values[0]} - ${values[1] == 1000 ? "1000+" : values[1]}
+      <div className="mt-28 text-[50px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[160px] font-medium">
+        ${priceRange[0]} - ${priceRange[1] == 1000 ? "1000+" : priceRange[1]}
       </div>
     </div>
   );
