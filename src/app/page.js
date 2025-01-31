@@ -1,6 +1,5 @@
 "use client";
-
-import { useRef } from "react";
+import { useRouter } from "next/navigation";
 import LandingPage from "./landing-page";
 import Section1 from "./section1";
 import Section2 from "./section2";
@@ -11,7 +10,12 @@ import Section6 from "./section6";
 import Section7 from "./section7";
 
 export default function Home() {
-  const scrollRef = useRef(null);
+
+  const router = useRouter();
+
+  const navigateToResults = () => {
+    router.push('/results');
+  };
 
   return (
     <div className="h-screen overflow-scroll snap-y snap-mandatory bg-transparent">
@@ -22,7 +26,7 @@ export default function Home() {
       <Section4 />
       <Section5 />
       <Section6 />
-      <Section7 />
+      <Section7 navigateToResults={navigateToResults}/>
     </div>
   );
 }
