@@ -40,7 +40,7 @@ const ResultsPage = () => {
         />
       </div>
       <div
-        className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
+        className={`absolute inset-0 overflow-scroll snap-y snap-mandatory transition-opacity duration-[1500ms] ease-in-out ${
           fade && currentSection == 1 ? "opacity-100 z-10" : "opacity-0 z-[-10]"
         }`}
       >
