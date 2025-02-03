@@ -22,6 +22,10 @@ export default {
         myGrey: "#FBFBFB",
         myTextBlue: "#0095DA",
         myTextPink: "#EA00E2",
+        myResultsTextBlue: "#008BD5",
+        myResultsLineMiddle: "#3B2FDE",
+        myResultsTextPink: "#B700EA",
+        myButtonBlue: "#002183",
       },
       screens: {
         xs: "480px", // Custom breakpoint for smaller screens
