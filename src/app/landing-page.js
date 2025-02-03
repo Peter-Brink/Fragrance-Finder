@@ -31,10 +31,10 @@ const LandingPage = () => {
           </a>
         </p>
         <div className="flex flex-col items-center mb-10">
-          <h1 className="text-2xl xs:text-4xl sm:text-5xl md:text-6xl font-sans font-light mb-5">
+          <h1 className="text-2xl xs:text-4xl sm:text-5xl md:text-6xl font-light mb-5">
             Your fragrance helps you
           </h1>
-          <h1 className="text-6xl sm:text-8xl font-sans font-semibold text-transparent bg-clip-text bg-gradient-to-r from-myTextBlue to-myTextPink">
+          <h1 className="text-6xl sm:text-8xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-myTextBlue to-myTextPink">
             Stand Out
           </h1>
         </div>
