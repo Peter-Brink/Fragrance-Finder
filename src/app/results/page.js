@@ -1,30 +1,64 @@
 "use client";
 import { useEffect, useState } from "react";
+import ResultSection from "./result-section";
+import LandingSection from "./landing-section";
 
 const ResultsPage = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [data, setData] = useState(null);
+  const [overview, setOverview] = useState("");
+  const [fragrances, setFragrances] = useState([]);
+  const [currentSection, setCurrentSection] = useState(0);
+  const [fade, setFade] = useState(false);
+
+  const handleFade = () => {
+    setFade(false);
+    setTimeout(() => {
+      setCurrentSection(1);
+      setFade(true);
+    }, 500);
+  };
 
   useEffect(() => {
-    setIsVisible(true);
+    setFade(true);
     const storedData = localStorage.getItem("resultsData");
-    if (storedData) setData(JSON.parse(storedData));
+    if (storedData) {
+      console.log(storedData);
+      const data = JSON.parse(storedData);
+      setOverview(data.overview);
+      setFragrances(data.fragrances);
+    }
   }, []);
 
   return (
-    <section className="section bg-gradient-to-b from-myNavy via-myNavy to-myBlue text-white snap-start">
+    <div className="h-screen bg-white font-sans overflow-hidden bg-gradient-to-b from-myNavy via-myNavy to-myBlue">
+      <div>
+        <LandingSection
+          overview={overview}
+          onClick={handleFade}
+          className={`transition-opacity duration-1000 ease-in-out ${
+            fade && currentSection == 0 ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      </div>
       <div
-        className={`w-[100vw] h-[100vh] flex flex-col items-center justify-center transition-opacity duration-1000 ease-in-out ${
-          isVisible ? "opacity-100" : "opacity-0"
+        className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
+          fade && currentSection == 1 ? "opacity-100 z-10" : "opacity-0 z-[-10]"
         }`}
       >
-        <h1 className="text-5xl font-light mb-20">We've found your perfect match!</h1>
-        <p className="max-w-[1200px]">
-        { data ? JSON.stringify(data, null, 2) : "No data found" }
-        </p>
-        {/* Display your results data here */}
+        {currentSection == 1 && fragrances.length > 0 && (
+          <div>
+            {fragrances.map((fragrance, index) => {
+              return (
+                <ResultSection
+                  key={index}
+                  fragrance={fragrance}
+                  sectionIndex={index + 1}
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
-    </section>
+    </div>
   );
 };
 
