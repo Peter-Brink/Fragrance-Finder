@@ -4,7 +4,6 @@ import { makeApiCall } from "@/utils/api-connector";
 
 const ExtraInfoSection = ({ navigateToResults }) => {
   const [loading, setLoading] = useState(false);
-  const { extraDetails, setSectionData } = useUserInputStore();
 
   const handleApiCall = async () => {
     setLoading(true);
