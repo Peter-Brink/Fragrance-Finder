@@ -22,19 +22,27 @@ export const makeApiCall = async () => {
   console.log("priceRange: ", priceRange);
   console.log("extraDetails: ", extraDetails);
 
-  const llmInput = `The user is a ${age} year old ${gender}. Consider the following factors as part of their lifestyle: ${lifestyleSelections.join(
-    ", "
-  )}. They are looking for a fragrance that is ${scentSelections.join(
-    ", "
-  )} and suitable for ${occasionSelections.join(
+  const llmInput = `The user is a ${age} year old ${gender}.${
+    lifestyleSelections[0] === "None"
+      ? ""
+      : ` Consider the following factors as part of their lifestyle: ${lifestyleSelections.join(
+          ", "
+        )}.`
+  } ${
+    scentSelections[0] === "Choose for me"
+      ? "They are open to any type of scent"
+      : `They are looking for a fragrance that is ${scentSelections.join(", ")}`
+  }. They need something that is suitable for ${occasionSelections.join(
     ", "
   )}. They are willing to spend between ${priceRange[0]} and ${
     priceRange[1]
   } dollars.${
     extraDetails === ""
       ? ""
-      : " They also had the following additional notes:" + extraDetails
+      : " They also had the following additional notes: " + extraDetails
   }`;
+
+  console.log(llmInput);
 
   try {
     const res = await fetch("/api/llm-connector", {
@@ -46,11 +54,11 @@ export const makeApiCall = async () => {
         message: llmInput,
       }),
     });
-    if(res.status !== 200) {
+    if (res.status !== 200) {
       throw new Error("API call failed: " + res.statusText);
     }
     const data = await res.json();
-    localStorage.setItem("resultsData", JSON.stringify(data));
+    localStorage.setItem("resultsData", data);
     return res.status;
   } catch (error) {
     console.error("Error during API call:", error);
