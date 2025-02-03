@@ -1,4 +1,4 @@
-import AgeInput from "@/components/inputs/age-input";
+import AgeInput from "@/components/visual/components/age-input";
 import FadingDiv from "@/components/visual/components/nav-arrow-down";
 import HeadingText from "@/components/visual/components/heading-text";
 import NavArrowUp from "@/components/visual/components/nav-arrow-up";
