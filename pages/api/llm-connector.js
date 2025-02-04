@@ -3,6 +3,7 @@ export default async function handler(req, res) {
     res.status(405).json({ message: "Method not allowed" });
   } else {
     try {
+      console.log(process.env.OPEN_AI_API_KEY);
       const response = await fetch(
         `https://api.openai.com/v1/chat/completions`,
         {
