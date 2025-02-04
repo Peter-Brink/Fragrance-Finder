@@ -11,12 +11,12 @@ const LandingSection = ({ overview, onClick, className }) => {
   return (
     <section
       id="section0"
-      className={`h-screen relative snap-start flex flex-col gap-4 items-center justify-center ${className}`}
+      className={`h-screen relative snap-start flex flex-col gap-4 items-center justify-center pr-4 pl-4 ${className}`}
     >
-      <h1 className="text-6xl font-light h-20 text-transparent bg-clip-text bg-gradient-to-r from-myTextBlue to-myTextPink">
+      <h1 className="text-4xl md:text-6xl font-light p-8 inline-block break-words text-center text-transparent bg-clip-text bg-gradient-to-r from-myTextBlue to-myTextPink">
         Explore your fragrances
       </h1>
-      <p className="mb-10 text-lg text-myGrey opacity-80 font-light max-w-[1000px] text-center">
+      <p className="mb-10 text-base sm:text-lg md:text-2xl text-myGrey opacity-80 font-light max-w-[1000px] text-center">
         {overview}
       </p>
       <button

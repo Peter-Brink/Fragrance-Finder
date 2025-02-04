@@ -10,7 +10,7 @@ const ResultSection = ({ fragrance, sectionIndex, searchAgain }) => {
     >
       {sectionIndex > 1 && <NavArrowUp section={sectionIndex} />}
       <h1
-        className="text-[20px] sm:text-[40px] md:text-[60px] font-light w-max-[1000px] inline-block break-words text-center text-transparent bg-clip-text bg-gradient-to-r from-myResultsTextBlue to-myResultsTextPink"
+        className="text-[20px] xs:text-[30px] sm:text-[40px] md:text-[60px] font-light w-max-[1000px] inline-block break-words text-center text-transparent bg-clip-text bg-gradient-to-r from-myResultsTextBlue to-myResultsTextPink"
         style={{ fontFamily: "Average" }}
       >
         {fragrance.name}
@@ -28,7 +28,7 @@ const ResultSection = ({ fragrance, sectionIndex, searchAgain }) => {
         <hr className="border-0 h-0.5 w-[100px] sm:w-[150px] md:w-[200px] rounded-full bg-gradient-to-r from-myResultsLineMiddle to-myResultsTextPink ml-6" />
       </div>
       <p className="opacity-80 font-light mb-8 text-lg sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-myResultsTextBlue to-myResultsTextPink">{`$${fragrance.price_range.min} - $${fragrance.price_range.max}`}</p>
-      <p className="text-white text-sm sm:text-lg md:text-2xl font-light opacity-80 max-w-[1000px] text-center mb-14">
+      <p className="text-white text-base sm:text-lg md:text-2xl font-light opacity-80 max-w-[1000px] text-center mb-14">
         {fragrance.description}
       </p>
       {sectionIndex < 5 && (
