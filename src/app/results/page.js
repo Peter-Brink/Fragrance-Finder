@@ -23,7 +23,6 @@ const ResultsPage = () => {
     setFade(true);
     const storedData = localStorage.getItem("resultsData");
     if (storedData) {
-      console.log(storedData);
       const data = JSON.parse(storedData);
       setOverview(data.overview);
       setFragrances(data.fragrances);

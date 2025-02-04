@@ -32,24 +32,6 @@ export const makeApiCall = async () => {
       : " They also had the following additional notes: " + extraDetails
   }`;
 
-  if (process.env.NODE_ENV) {
-    console.log(process.env.NODE_ENV);
-  } else {
-    console.log("No NODE_ENV");
-  }
-
-  if (process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL) {
-    console.log(process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL);
-  } else {
-    console.log("No VERCEL_BRANCH_URL");
-  }
-
-  if (process.env.NEXT_PUBLIC_API_BASE_URL) {
-    console.log(process.env.NEXT_PUBLIC_API_BASE_URL);
-  } else {
-    console.log("No NEXT_PUBLIC_API_BASE_URL");
-  }
-
   try {
     const res = await fetch(
       process.env.NODE_ENV === "production"
