@@ -1,12 +1,14 @@
 export default async function handler(req, res) {
-
   if (req.method === "OPTIONS") {
-    res.setHeader(
-      "Access-Control-Allow-Origin",
-      process.env.NODE_ENV === "production"
-        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : process.env.NEXT_PUBLIC_API_BASE_URL
-    );
+    const corsURL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+    if (process.env.NODE_ENV === "production") {
+      requestURL = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/llm-connector`;
+    } else if (process.env.NODE_ENV === "preview") {
+      requestURL = `https://${process.env.VERCEL_BRANCH_URL}/api/llm-connector`;
+    }
+
+    res.setHeader("Access-Control-Allow-Origin", corsURL);
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     return res.status(200).end();
@@ -107,15 +109,14 @@ export default async function handler(req, res) {
         }
       );
 
-      
       if (!response.ok) {
         return res.status(response.status).json({
           message: "Non-200 response from external API",
         });
       }
-      
+
       const data = await response.json();
-      
+
       const refusal = data.choices[0].message.refusal;
 
       if (refusal) {

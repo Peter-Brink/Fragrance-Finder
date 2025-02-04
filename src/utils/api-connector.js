@@ -33,21 +33,24 @@ export const makeApiCall = async () => {
   }`;
 
   try {
-    const res = await fetch(
-      process.env.NODE_ENV === "production"
-        ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}/api/llm-connector`
-        : `${process.env.NEXT_PUBLIC_API_BASE_URL}api/llm-connector`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: llmInput,
-        }),
-        mode: "cors",
-      }
-    );
+    const requestURL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+    if (process.env.NODE_ENV === "production") {
+      requestURL = `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}/api/llm-connector`;
+    } else if (process.env.NODE_ENV === "preview") {
+      requestURL = `https://${process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL}/api/llm-connector`;
+    }
+
+    const res = await fetch(requestURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: llmInput,
+      }),
+      mode: "cors",
+    });
 
     const data = await res.json();
 
