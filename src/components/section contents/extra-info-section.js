@@ -1,11 +1,14 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import useUserInputStore from "@/store/useUserInputStore";
 import { makeApiCall } from "@/utils/api-connector";
 import ErrorPopup from "../reusable/error-popup";
 import { checkSectionData } from "@/utils/check-section-data";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+});
 import loadingAnimation from "../../../public/animations/loading-animation.json";
 
 const ExtraInfoSection = ({ navigateToResults }) => {
