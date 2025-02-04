@@ -1,16 +1,28 @@
 import { useState } from "react";
 import useUserInputStore from "@/store/useUserInputStore";
 import { makeApiCall } from "@/utils/api-connector";
+import ErrorPopup from "./components/error-popup";
+import { checkSectionData } from "@/utils/check-section-data";
+import Lottie from "lottie-react";
+import loadingAnimation from "../../../public/animations/loading-animation.json";
 
 const ExtraInfoSection = ({ navigateToResults }) => {
   const [loading, setLoading] = useState(false);
+  const { setSectionData } = useUserInputStore();
+  const [error, setError] = useState(null);
 
   const handleApiCall = async () => {
+    const dataCheck = checkSectionData();
+    if (!dataCheck) {
+      return;
+    }
     setLoading(true);
     const result = await makeApiCall();
     setLoading(false);
     if (result === 200) {
       navigateToResults();
+    } else {
+      setError("Failed to fetch data");
     }
   };
 
@@ -39,12 +51,14 @@ const ExtraInfoSection = ({ navigateToResults }) => {
             : "opacity-0 translate-y-4 invisible"
         }`}
       >
-        <div className="bg-white p-6 w-[700px] h-[500px] rounded-[30px] shadow-lg text-center">
-          <h1 className="text-myNavy mt-5 text-3xl font-light">
+        <div className="bg-myNavy p-6 w-[700px] h-[500px] rounded-[30px] shadow-lg text-center">
+          <h1 className="text-myGrey opacity-80 mt-5 text-3xl font-light">
             Finding your perfect fragrance
           </h1>
+          <Lottie animationData={loadingAnimation} loop={true} className="h-[85%]"/>
         </div>
       </div>
+      {error && <ErrorPopup message={error} onClose={() => setError(null)} />}
     </div>
   );
 };

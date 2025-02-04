@@ -94,20 +94,30 @@ export default async function handler(req, res) {
         }
       );
 
+      const data = await response.json();
+
       if (!response.ok) {
         return res.status(response.status).json({
-          message: "External API error occurred",
-          details: await response.json(),
+          message: "Non-200 response from external API",
         });
       }
 
-      const data = await response.json();
-      res.status(200).json(data.choices[0].message.content);
+      const refusal = data.choices[0].message.refusal;
+
+      if (refusal) {
+        return res.status(400).json({
+          message: "LLM refused response",
+          details:
+            "The llm refused to respond, this could mean that the user input was considered invalid or offensive.\nSystem message: " +
+            data.choices[0].message.content,
+        });
+      }
+
+      return res.status(200).json(data.choices[0].message.content);
     } catch (e) {
-      console.error("Error fetching external API:", e);
-      res.status(502).json({
+      return res.status(502).json({
         message: "Failed to reach the external API",
-        error: e.message,
+        details: e.message,
       });
     }
   }

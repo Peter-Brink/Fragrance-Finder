@@ -14,14 +14,6 @@ export const makeApiCall = async () => {
     extraDetails,
   } = useUserInputStore.getState(); // Access Zustand state directly here
 
-  console.log("age: ", age);
-  console.log("gender: ", gender);
-  console.log("lifestyleSelections: ", lifestyleSelections);
-  console.log("scentSelections: ", scentSelections);
-  console.log("occasionSelections: ", occasionSelections);
-  console.log("priceRange: ", priceRange);
-  console.log("extraDetails: ", extraDetails);
-
   const llmInput = `The user is a ${age} year old ${gender}.${
     lifestyleSelections[0] === "None"
       ? ""
@@ -54,14 +46,18 @@ export const makeApiCall = async () => {
         message: llmInput,
       }),
     });
-    if (res.status !== 200) {
-      throw new Error("API call failed: " + res.statusText);
-    }
+
     const data = await res.json();
+
+    if (res.status !== 200) {
+      throw new Error(
+        data.message + (data.details ? "\nDetails: " + data.details : "")
+      );
+    }
     localStorage.setItem("resultsData", data);
     return res.status;
   } catch (error) {
-    console.error("Error during API call:", error);
+    console.error("Error during API call.", error);
     return error;
   }
 };
