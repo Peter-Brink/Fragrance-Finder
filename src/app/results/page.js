@@ -2,12 +2,14 @@
 import { useEffect, useState } from "react";
 import ResultSection from "./result-section";
 import LandingSection from "./landing-section";
+import { useRouter } from "next/navigation";
 
 const ResultsPage = () => {
   const [overview, setOverview] = useState("");
   const [fragrances, setFragrances] = useState([]);
   const [currentSection, setCurrentSection] = useState(0);
   const [fade, setFade] = useState(false);
+  const router = useRouter();
 
   const handleFade = () => {
     setFade(false);
@@ -27,6 +29,10 @@ const ResultsPage = () => {
       setFragrances(data.fragrances);
     }
   }, []);
+
+  const searchAgain = () => {
+    router.push("/");
+  };
 
   return (
     <div className="h-screen bg-white font-sans overflow-hidden bg-gradient-to-b from-myNavy via-myNavy to-myBlue">
@@ -52,6 +58,7 @@ const ResultsPage = () => {
                   key={index}
                   fragrance={fragrance}
                   sectionIndex={index + 1}
+                  searchAgain={searchAgain}
                 />
               );
             })}
