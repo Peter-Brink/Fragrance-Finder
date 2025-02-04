@@ -35,7 +35,7 @@ export const makeApiCall = async () => {
   try {
     const res = await fetch(
       process.env.NODE_ENV === "production"
-        ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/llm-connector`
+        ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}/api/llm-connector`
         : `${process.env.NEXT_PUBLIC_API_BASE_URL}api/llm-connector`,
       {
         method: "POST",
