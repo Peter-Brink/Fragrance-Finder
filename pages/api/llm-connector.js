@@ -2,9 +2,9 @@ export default async function handler(req, res) {
   if (req.method === "OPTIONS") {
     const corsURL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-    if (process.env.NODE_ENV === "production") {
+    if (process.env.VERCEL_ENV === "production") {
       requestURL = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/llm-connector`;
-    } else if (process.env.NODE_ENV === "preview") {
+    } else if (process.env.VERCEL_ENV === "preview") {
       requestURL = `https://${process.env.VERCEL_BRANCH_URL}/api/llm-connector`;
     }
 
