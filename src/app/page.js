@@ -1,13 +1,13 @@
 "use client";
 import { useRouter } from "next/navigation";
-import LandingPage from "./landing-page";
-import Section1 from "./section1";
-import Section2 from "./section2";
-import Section3 from "./section3";
-import Section4 from "./section4";
-import Section5 from "./section5";
-import Section6 from "./section6";
-import Section7 from "./section7";
+import LandingPage from "./sections/landing-page";
+import Section1 from "./sections/section1";
+import Section2 from "./sections/section2";
+import Section3 from "./sections/section3";
+import Section4 from "./sections/section4";
+import Section5 from "./sections/section5";
+import Section6 from "./sections/section6";
+import Section7 from "./sections/section7";
 
 export default function Home() {
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useUserInputStore from "@/store/useUserInputStore";
 import { makeApiCall } from "@/utils/api-connector";
-import ErrorPopup from "./components/error-popup";
+import ErrorPopup from "../reusable/error-popup";
 import { checkSectionData } from "@/utils/check-section-data";
 import Lottie from "lottie-react";
 import loadingAnimation from "../../../public/animations/loading-animation.json";
@@ -55,7 +55,11 @@ const ExtraInfoSection = ({ navigateToResults }) => {
           <h1 className="text-myGrey opacity-80 mt-5 text-3xl font-light">
             Finding your perfect fragrance
           </h1>
-          <Lottie animationData={loadingAnimation} loop={true} className="h-[85%]"/>
+          <Lottie
+            animationData={loadingAnimation}
+            loop={true}
+            className="h-[85%]"
+          />
         </div>
       </div>
       {error && <ErrorPopup message={error} onClose={() => setError(null)} />}

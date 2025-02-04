@@ -1,4 +1,4 @@
-import SelectionBlock from "./components/selection-block";
+import SelectionBlock from "../reusable/selection-block";
 import SmokingEmoji from "../../../public/emojis/smoking.svg";
 import AlcoholEmoji from "../../../public/emojis/alcohol.svg";
 import CaffeineEmoji from "../../../public/emojis/caffeine.svg";
@@ -32,7 +32,10 @@ const LifestyleSelection = () => {
           <SelectionBlock
             key={label}
             label={label}
-            isSelected={Array.isArray(lifestyleSelections) && lifestyleSelections.includes(label)}
+            isSelected={
+              Array.isArray(lifestyleSelections) &&
+              lifestyleSelections.includes(label)
+            }
             onSelect={() => handleArraySelection("lifestyleSelections", label)}
           >
             {icon}

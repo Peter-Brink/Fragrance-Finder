@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SelectionBlock from "./components/selection-block";
+import SelectionBlock from "../reusable/selection-block";
 import EverydayEmoji from "../../../public/emojis/everyday.svg";
 import NightEmoji from "../../../public/emojis/night.svg";
 import BeachEmoji from "../../../public/emojis/beach.svg";
@@ -10,7 +10,6 @@ import useUserInputStore from "@/store/useUserInputStore";
 
 const OccasionSelection = () => {
   const { occasionSelections, handleArraySelection } = useUserInputStore();
-
 
   const options = [
     {
@@ -37,7 +36,10 @@ const OccasionSelection = () => {
           <SelectionBlock
             key={label}
             label={label}
-            isSelected={Array.isArray(occasionSelections) && occasionSelections.includes(label)}
+            isSelected={
+              Array.isArray(occasionSelections) &&
+              occasionSelections.includes(label)
+            }
             onSelect={() => handleArraySelection("occasionSelections", label)}
           >
             {icon}

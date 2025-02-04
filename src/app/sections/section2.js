@@ -1,7 +1,7 @@
-import FadingDiv from "@/components/visual/components/nav-arrow-down";
-import HeadingText from "@/components/visual/components/heading-text";
-import NavArrowUp from "@/components/visual/components/nav-arrow-up";
-import GenderSelection from "@/components/visual/gender-selection";
+import FadingDiv from "@/components/reusable/nav-arrow-down";
+import HeadingText from "@/components/reusable/heading-text";
+import NavArrowUp from "@/components/reusable/nav-arrow-up";
+import GenderSelection from "@/components/section contents/gender-selection";
 
 const Section2 = () => {
   return (
