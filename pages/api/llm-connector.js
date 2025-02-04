@@ -1,4 +1,17 @@
 export default async function handler(req, res) {
+
+  if (req.method === "OPTIONS") {
+    res.setHeader(
+      "Access-Control-Allow-Origin",
+      process.env.NODE_ENV === "production"
+        ? `https://${process.env.VERCEL_URL}`
+        : process.env.NEXT_PUBLIC_API_BASE_URL
+    );
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    return res.status(200).end();
+  }
+
   if (req.method !== "POST") {
     res.status(405).json({ message: "Method not allowed" });
   } else {

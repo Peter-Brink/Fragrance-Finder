@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import useUserInputStore from "@/store/useUserInputStore";
 
 export const makeApiCall = async () => {
@@ -32,18 +32,22 @@ export const makeApiCall = async () => {
       : " They also had the following additional notes: " + extraDetails
   }`;
 
-  console.log(llmInput);
-
   try {
-    const res = await fetch(process.env.NODE_ENV === 'production' ? `https://${process.env.VERCEL_URL}` : process.env.NEXT_PUBLIC_API_BASE_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        message: llmInput,
-      }),
-    });
+    const res = await fetch(
+      process.env.NODE_ENV === "production"
+        ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/llm-connector`
+        : `${process.env.NEXT_PUBLIC_API_BASE_URL}api/llm-connector`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: llmInput,
+        }),
+        mode: "cors",
+      }
+    );
 
     const data = await res.json();
 
