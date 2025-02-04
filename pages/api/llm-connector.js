@@ -3,9 +3,9 @@ export default async function handler(req, res) {
     const corsURL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
     if (process.env.VERCEL_ENV === "production") {
-      requestURL = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/llm-connector`;
+      corsURL = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/llm-connector`;
     } else if (process.env.VERCEL_ENV === "preview") {
-      requestURL = `https://${process.env.VERCEL_BRANCH_URL}/api/llm-connector`;
+      corsURL = `https://${process.env.VERCEL_BRANCH_URL}/api/llm-connector`;
     }
 
     res.setHeader("Access-Control-Allow-Origin", corsURL);
