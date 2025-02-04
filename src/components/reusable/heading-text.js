@@ -1,6 +1,6 @@
-const HeadingText = ({text, className}) => {
+const HeadingText = ({text}) => {
   return (
-    <div className={`flex flex-col w-[100vw] text-center h-16 ${className || "mt-0"}`}>
+    <div className={`w-[100vw] text-center mb-10`}>
       <h1 className="text-2xl xs:text-3xl md:text-5xl font-light ml-10 mr-10">
         {text}
       </h1>

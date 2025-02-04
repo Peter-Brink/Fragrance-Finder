@@ -1,5 +1,4 @@
-"use client";
-
+'use client';
 import FadingDiv from "@/components/reusable/nav-arrow-down";
 import { FaGithub } from "react-icons/fa";
 import { useEffect, useState } from "react";
@@ -15,7 +14,7 @@ const LandingPage = () => {
     <div className="w-[100vw] h-[100vh] bg-gradient-to-b from-myNavy via-myNavy to-myBlue">
       <section
         id="section0"
-        className={`section justify-center bg-transparent transition-opacity duration-[1500ms] ease-in-out ${
+        className={`section transition-opacity duration-[1500ms] ease-in-out ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >

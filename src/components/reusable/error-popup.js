@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
 import { useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
-export default function ErrorPopup({ message, onClose }) {
+const ErrorPopup = ({ message, onClose }) => {
   useEffect(() => {
     const timer = setTimeout(onClose, 3000);
     return () => clearTimeout(timer);
@@ -15,4 +15,6 @@ export default function ErrorPopup({ message, onClose }) {
       <span>{message}</span>
     </div>
   );
-}
+};
+
+export default ErrorPopup;

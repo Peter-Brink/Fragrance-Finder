@@ -1,8 +1,6 @@
 import { create } from "zustand";
 
-// Define Zustand store
 const useUserInputStore = create((set) => ({
-  // Initial state for each section
   age: 25,
   gender: "",
   lifestyleSelections: [],
@@ -11,11 +9,9 @@ const useUserInputStore = create((set) => ({
   priceRange: [400, 700],
   extraDetails: "",
 
-  // Function to update a section’s state
   setSectionData: (section, value) =>
     set((state) => ({ ...state, [section]: value })),
 
-  // Function to reset all inputs
   resetForm: () =>
     set({
       age: 25,

@@ -1,8 +1,6 @@
-// utils/api.js
-
+'use client';
 import useUserInputStore from "@/store/useUserInputStore";
 
-// Utility function to make the API call
 export const makeApiCall = async () => {
   const {
     age,
@@ -12,7 +10,7 @@ export const makeApiCall = async () => {
     occasionSelections,
     priceRange,
     extraDetails,
-  } = useUserInputStore.getState(); // Access Zustand state directly here
+  } = useUserInputStore.getState();
 
   const llmInput = `The user is a ${age} year old ${gender}.${
     lifestyleSelections[0] === "None"

@@ -7,7 +7,7 @@ const Section1 = () => {
   return (
     <section
       id="section1"
-      className="section items-center bg-gradient-to-b from-myBlue to-mylightBlue"
+      className="section bg-gradient-to-b from-myBlue to-mylightBlue"
     >
       <NavArrowUp section={1} />
       <div>

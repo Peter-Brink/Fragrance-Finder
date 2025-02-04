@@ -1,3 +1,4 @@
+'use client';
 import useUserInputStore from "@/store/useUserInputStore";
 
 export const checkSectionData = (data) => {

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useEffect, useState } from "react";
 import ResultSection from "./result-section";
 import LandingSection from "./landing-section";

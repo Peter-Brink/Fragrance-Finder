@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from "react";
 import useUserInputStore from "@/store/useUserInputStore";
 import { makeApiCall } from "@/utils/api-connector";
@@ -31,7 +33,7 @@ const ExtraInfoSection = ({ navigateToResults }) => {
   };
 
   return (
-    <div className="w-[100vw] pl-5 pr-5 xs:pl-10 xs:pr-10 max-w-[1000px] relative flex-col items-center justify-center flex-grow mb-40 mt-10">
+    <div className="w-[100vw] pl-5 pr-5 xs:pl-10 xs:pr-10 max-w-[1000px] relative flex-col items-center justify-center mt-10">
       <input
         type="text"
         className="w-[100%] h-[50px] rounded-[30px] text-lg placeholder:text-size-lg sm:text-2xl sm:placeholder:text-size:2xl text-gray-600 p-5 sm:p-8 border outline-none focus:ring-2 focus:ring-gray-700 resize-none"

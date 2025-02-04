@@ -4,17 +4,17 @@ import LandingPage from "./sections/landing-page";
 import Section1 from "./sections/section1";
 import Section2 from "./sections/section2";
 import Section3 from "./sections/section3";
+
 import Section4 from "./sections/section4";
 import Section5 from "./sections/section5";
 import Section6 from "./sections/section6";
 import Section7 from "./sections/section7";
 
 export default function Home() {
-
   const router = useRouter();
 
   const navigateToResults = () => {
-    router.push('/results');
+    router.push("/results");
   };
 
   return (
@@ -26,7 +26,7 @@ export default function Home() {
       <Section4 />
       <Section5 />
       <Section6 />
-      <Section7 navigateToResults={navigateToResults}/>
+      <Section7 navigateToResults={navigateToResults} />
     </div>
   );
 }

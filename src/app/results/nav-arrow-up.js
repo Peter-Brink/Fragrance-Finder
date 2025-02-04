@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { ChevronUpIcon } from "@heroicons/react/24/outline";
 
 const NavArrowUp = ({ section, text }) => {

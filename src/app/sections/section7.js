@@ -10,7 +10,6 @@ const Section7 = ({ navigateToResults }) => {
     >
       <NavArrowUp section={7} />
       <HeadingText
-        className="mt-[30vh]"
         text={"Is there anything else you think we should know?"}
       />
       <ExtraInfoSection navigateToResults={navigateToResults} />

@@ -1,3 +1,5 @@
+'use client';
+
 import useUserInputStore from "@/store/useUserInputStore";
 
 const AgeInput = () => {

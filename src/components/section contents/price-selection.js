@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { Range } from "react-range";
 import MoneyEmoji from "../../../public/emojis/money.svg";
@@ -9,9 +9,8 @@ const PriceSelection = () => {
 
 
   return (
-    <div className="flex flex-col w-[100%] mt-[100px] items-center justify-center p-8">
+    <div className="flex flex-col w-[100%] items-center justify-center p-8 pt-32">
       <div className="w-[70vw] max-w-[1200px]">
-        {/* Slider */}
         <Range
           step={10}
           min={0}

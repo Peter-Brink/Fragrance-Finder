@@ -1,4 +1,5 @@
-import { useState } from "react";
+'use client';
+
 import SelectionBlock from "../reusable/selection-block";
 import EverydayEmoji from "../../../public/emojis/everyday.svg";
 import NightEmoji from "../../../public/emojis/night.svg";
@@ -30,8 +31,8 @@ const OccasionSelection = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center w-[100vw] mt-6">
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-5 md:gap-10 lg:gap-x-20">
+    <div className="section-contents-container">
+      <div className="section-grid-container">
         {options.map(({ label, icon }) => (
           <SelectionBlock
             key={label}

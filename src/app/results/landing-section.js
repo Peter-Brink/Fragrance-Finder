@@ -1,5 +1,5 @@
+'use client';
 import React, { useEffect, useState } from "react";
-import NavArrowDown from "./nav-arrow-down";
 
 const LandingSection = ({ overview, onClick, className }) => {
   const [isVisible, setIsVisible] = useState(false);

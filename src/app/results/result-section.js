@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import NavArrowDown from "./nav-arrow-down";
 import NavArrowUp from "./nav-arrow-up";
 
