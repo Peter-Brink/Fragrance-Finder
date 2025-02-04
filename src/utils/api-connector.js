@@ -36,10 +36,8 @@ export const makeApiCall = async () => {
     const requestURL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/llm-connector`;
 
     if (process.env.NEXT_PUBLIC_VERCEL_ENV === "production") {
-      console.log("Production environment detected.");
       requestURL = `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}/api/llm-connector`;
     } else if (process.env.NEXT_PUBLIC_VERCEL_ENV === "preview") {
-      console.log("Preview environment detected.");
       requestURL = `https://${process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL}/api/llm-connector`;
     }
 
