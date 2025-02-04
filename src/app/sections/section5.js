@@ -1,7 +1,8 @@
 import FadingDiv from "@/components/reusable/nav-arrow-down";
 import HeadingText from "@/components/reusable/heading-text";
 import NavArrowUp from "@/components/reusable/nav-arrow-up";
-import OccasionSelection from "@/components/section contents/occasion-selection";
+import LifestyleSelection from "@/components/section contents/lifestyle-selection";
+
 
 const Section5 = () => {
   return (
@@ -11,8 +12,8 @@ const Section5 = () => {
     >
       <NavArrowUp section={5} />
       <div>
-        <HeadingText text={"What occasion is your fragrance for?"} />
-        <OccasionSelection />
+        <HeadingText text={"Which of these are part of your lifestyle?"} />
+        <LifestyleSelection />
       </div>
       <FadingDiv section={5} />
     </section>

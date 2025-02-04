@@ -3,9 +3,9 @@ import { create } from "zustand";
 const useUserInputStore = create((set) => ({
   age: 25,
   gender: "",
+  occasionSelections: [],
+  scentSelections: [],
   lifestyleSelections: [],
-  scentSelections: "",
-  occasionSelections: "",
   priceRange: [400, 700],
   extraDetails: "",
 
@@ -16,9 +16,9 @@ const useUserInputStore = create((set) => ({
     set({
       age: 25,
       gender: "",
-      lifestyleSelections: [],
-      scentSelections: "",
-      occasionSelections: "",
+      occasionSelections: [],
+      scentSelections: [],
+      lifeestyleSelections: [],
       priceRange: [400, 700],
       extraDetails: "",
     }),
