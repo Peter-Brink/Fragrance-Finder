@@ -63,6 +63,7 @@ export const makeApiCall = async () => {
         body: JSON.stringify({
           message: llmInput,
         }),
+        mode: "cors",
       }
     );
 
