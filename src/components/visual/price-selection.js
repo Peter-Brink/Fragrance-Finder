@@ -50,7 +50,7 @@ const PriceSelection = () => {
       </div>
 
       {/* Display Price Range */}
-      <div className="mt-16 text-[50px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[160px] font-medium">
+      <div className="mt-16 text-[50px] xs:text-[80px] sm:text-[90px] md:text-[100px] lg:text-[120px] font-medium">
         ${priceRange[0]} - ${priceRange[1] == 1000 ? "1000+" : priceRange[1]}
       </div>
     </div>

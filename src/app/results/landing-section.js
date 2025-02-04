@@ -20,7 +20,7 @@ const LandingSection = ({ overview, onClick, className }) => {
         {overview}
       </p>
       <button
-        className="bg-myButtonBlue text-white px-5 py-2 rounded-full font-medium text-lg"
+        className="bg-myButtonBlue text-white px-5 py-2 rounded-full font-medium text-lg transition-all duration-[900ms] hover:shadow-[0_0_40px_3px_rgba(0,21,205,0.7)]"
         onClick={onClick}
       >
         Explore fragrances
