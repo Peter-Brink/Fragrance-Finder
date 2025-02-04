@@ -107,14 +107,15 @@ export default async function handler(req, res) {
         }
       );
 
-      const data = await response.json();
-
+      
       if (!response.ok) {
         return res.status(response.status).json({
           message: "Non-200 response from external API",
         });
       }
-
+      
+      const data = await response.json();
+      
       const refusal = data.choices[0].message.refusal;
 
       if (refusal) {
