@@ -11,7 +11,7 @@ const LandingSection = ({ overview, onClick, className }) => {
   return (
     <section
       id="section0"
-      className={`h-screen relative snap-start flex flex-col gap-4 items-center justify-center pr-4 pl-4 ${className}`}
+      className={`h-[100dvh] relative snap-start flex flex-col gap-4 items-center justify-center pr-4 pl-4 ${className}`}
     >
       <h1 className="text-4xl md:text-6xl font-light p-8 inline-block break-words text-center text-transparent bg-clip-text bg-gradient-to-r from-myTextBlue to-myTextPink">
         Explore your fragrances

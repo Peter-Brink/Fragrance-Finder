@@ -22,7 +22,7 @@ body {
 
 @layer components {
   .section {
-    @apply h-screen relative flex flex-col justify-center items-center text-center text-white snap-start;
+    @apply h-[100dvh] relative flex flex-col justify-center items-center text-center text-white snap-start;
   }
   .gender-block {
     @apply w-[130px] h-[130px] xs:w-[200px] xs:h-[200px] sm:w-[250px] sm:h-[250px] md:w-[330px] md:h-[330px] lg:w-[400px] lg:h-[400px] bg-myGrey rounded-[20px] xs:rounded-[50px] flex items-center justify-center transform duration-100 hover:scale-95;
@@ -31,9 +31,9 @@ body {
     @apply flex flex-col cursor-pointer w-[130px] h-[130px] xs:w-[160px] xs:h-[160px] sm:w-[180px] sm:h-[180px] md:w-[220px] md:h-[220px] lg:w-[240px] lg:h-[240px] bg-myGrey rounded-[20px] xs:rounded-[30px] md:rounded-[50px] transform duration-100 hover:scale-95;
   }
   .section-contents-container {
-    @apply flex flex-col items-center w-[100vw] mt-6;
+    @apply flex flex-col items-center w-[100vw];
   }
   .section-grid-container {
-    @apply grid grid-cols-2  sm:grid-cols-3 gap-2 sm:gap-5 md:gap-10 lg:gap-x-20;
+    @apply grid grid-cols-2  sm:grid-cols-3 gap-3 sm:gap-5 md:gap-10 lg:gap-x-20;
   }
 }

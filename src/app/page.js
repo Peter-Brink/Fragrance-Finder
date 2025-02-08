@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <div className="h-screen font-sans overflow-scroll snap-y snap-mandatory bg-transparent">
+    <div className="h-[100dvh] font-sans overflow-scroll snap-y snap-mandatory bg-transparent">
       <LandingPage />
       <Section1 />
       <Section2 />

@@ -5,7 +5,7 @@ const ResultSection = ({ fragrance, sectionIndex, searchAgain }) => {
   return (
     <section
       id={`section${sectionIndex}`}
-      className="h-screen relative flex flex-col items-center justify-center bg-transparent snap-start pl-10 pr-10"
+      className="h-[100dvh] relative flex flex-col items-center justify-center bg-transparent snap-start pl-10 pr-10"
     >
       {sectionIndex > 1 && <NavArrowUp section={sectionIndex} />}
       <h1

@@ -34,7 +34,7 @@ const ResultsPage = () => {
   };
 
   return (
-    <div className="h-screen bg-white font-sans overflow-hidden bg-gradient-to-b from-myNavy via-myNavy to-myBlue">
+    <div className="h-[100dvh] bg-white font-sans overflow-hidden bg-gradient-to-b from-myNavy via-myNavy to-myBlue">
       <div>
         <LandingSection
           overview={overview}

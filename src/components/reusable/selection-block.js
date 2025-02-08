@@ -2,9 +2,10 @@ const SelectionBlock = ({ label, children, isSelected, onSelect }) => {
   return (
     <div
       className={`selection-block ${
-        isSelected ? "outline outline-2 sm:outline-4 outline-myNavy" : "outline-none"
-      } ${
-          label == "Choose for me" ? "items-center" : "items-start"}`}
+        isSelected
+          ? "outline outline-4 sm:outline-4 outline-myNavy"
+          : "outline-none"
+      } ${label == "Choose for me" ? "items-center" : "items-start"}`}
       onClick={onSelect}
     >
       <p
