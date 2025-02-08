@@ -6,7 +6,7 @@ const useUserInputStore = create((set) => ({
   occasionSelections: [],
   scentSelections: [],
   lifestyleSelections: [],
-  priceRange: [400, 700],
+  priceRange: [0, 500],
   extraDetails: "",
 
   setSectionData: (section, value) =>
@@ -19,7 +19,7 @@ const useUserInputStore = create((set) => ({
       occasionSelections: [],
       scentSelections: [],
       lifeestyleSelections: [],
-      priceRange: [400, 700],
+      priceRange: [100, 300],
       extraDetails: "",
     }),
 
