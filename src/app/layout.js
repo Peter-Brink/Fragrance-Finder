@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,7 +35,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className={`font-inter antialiased`}>{children}</body>
+      <body className={`font-inter antialiased`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
