@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import FadingDiv from "@/components/reusable/nav-arrow-down";
 import { FaGithub } from "react-icons/fa";
 import { useEffect, useState } from "react";

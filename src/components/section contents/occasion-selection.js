@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import SelectionBlock from "../reusable/selection-block";
 import EverydayEmoji from "../../../public/emojis/everyday.svg";
